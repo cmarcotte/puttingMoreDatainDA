@@ -53,8 +53,7 @@ function continuityMovie(workDir, ens="gues", x=25, y=100, z=100; dx=0.015, dt=2
 				axs[o,2].pcolormesh(transpose(S[o][:,y,:]), snap=true, shading="auto", rasterized=true, vmin=0.0, vmax=1.0, cmap=cmaps[o])
 				if n==1
 					ima = axs[o,1].pcolormesh(transpose(S[o][:,:,z]), snap=true, shading="auto", rasterized=true, vmin=0.0, vmax=1.0, cmap=cmaps[o])
-					clb = plt.colorbar(ima, ax=axs[o,:])
-					clb.ax.set_title("\$ $(varnames[o])\$")
+					clb = plt.colorbar(ima, ax=axs[o,:], label="\$ $(varnames[o])\$")
 				else
 					axs[o,1].pcolormesh(transpose(S[o][:,:,z]), snap=true, shading="auto", rasterized=true, vmin=0.0, vmax=1.0, cmap=cmaps[o])
 				end

@@ -73,7 +73,7 @@ for n,t in enumerate(times):
 		axs[0,1].set_title(r'$y={0}/{1}$'.format(y,Y))
 		axs[0,2].set_title(r'$z={0}/{1}$'.format(z,Z))
 		plt.suptitle(r"$t={0}$ [ms]".format(2.0*t))
-		plt.savefig(f"./continuity_frames/{t:04d}.png", dpi=300, bbox_inches="tight")
+		plt.savefig(f"./nature_frames/{t:04d}.png", dpi=300, bbox_inches="tight")
 		bar.update(n + 1)
 	except:
 		pass

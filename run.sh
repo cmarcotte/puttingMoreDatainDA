@@ -11,3 +11,6 @@
 ~/julia-1.7.1/bin/julia --project=. dynamicsMovie.jl $1 	&
 ~/julia-1.7.1/bin/julia --project=. continuityMovie.jl $1 	&
 ~/julia-1.7.1/bin/julia --project=. innovationMovie.jl $1 	&
+
+# Makie based movie creation
+#~/julia-1.7.1/bin/julia --project=. dynamicsMovieMakie.jl $1	&

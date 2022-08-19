@@ -44,6 +44,8 @@ function innovationMovie(workDir, zs = [1,10,20,30,40,50]; dx=0.015, dt=2.0)
 		for ax in axs
 			ax.cla()
 			ax.axes.set_aspect("equal")
+			ax.set_xticks([])
+			ax.set_yticks([])
 		end
 		try
 			fnames = [@sprintf("%s/mean/%04d/restart3d.%03d",guesDir,n,p) for p in 0:3]
@@ -54,10 +56,10 @@ function innovationMovie(workDir, zs = [1,10,20,30,40,50]; dx=0.015, dt=2.0)
 			for (o,z) in enumerate(zs)
 				obsdepth = z==1 ? 0.0 : z*dx
 				axs[end,o].set_xlabel(@sprintf("\$ %2.3f\$ [cm]", obsdepth))
-				for m in 1:3
-					axs[m,o].set_xticks([])
-					axs[m,o].set_yticks([])
-				end
+				#for m in 1:3
+				#	axs[m,o].set_xticks([])
+				#	axs[m,o].set_yticks([])
+				#end
 				if n==1 && o==length(zs)
 					ima = axs[1,o].pcolormesh(transpose(gu[z,:,:]), snap=true, shading="auto", rasterized=true, vmin=0.0, vmax=1.0, cmap="Oranges")
 					clb = plt.colorbar(ima, ax=axs[1,:])
